@@ -67,12 +67,13 @@ class KKEditText : AppCompatEditText {
         }
     }
 
-    val formattedValue: String
-        get() = if (text == null) "" else text.toString()
+    fun formattedValue(): String {
+        return if (text == null) "" else text.toString()
+    }
 
-    val doubleValue: String
-        get() = if (text == null) "" else text.toString()
-
+    fun rawValue(): Double {
+        return if (text == null) 0.0 else text.toString().toDoubleOrNull() ?: 0.0
+    }
 
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
