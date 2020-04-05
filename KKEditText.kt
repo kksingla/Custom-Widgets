@@ -28,7 +28,6 @@ class KKEditText : AppCompatEditText {
     }
 
     fun init() {
-//        filters = arrayOf<InputFilter>(CurrencyFormatInputFilter())
         addTextChangedListener(textWatcher)
     }
 
